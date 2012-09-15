@@ -1,0 +1,274 @@
+@charset "utf-8";
+/* CSS Document */
+ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+	
+}
+html{
+	overflow:auto;
+}
+input{
+	margin:0;
+	padding:0;
+}
+img{
+	border:none;
+}
+body {
+	font-size: 14px;
+ 	font-family: Tahoma, Geneva, sans-serif;
+	margin:0;
+	padding:0;
+	color:#333;
+	overflow:hidden;
+}
+
+#main_container{
+	width:100%;
+	height:auto;
+	position:relative;
+}
+.main_panel{
+	width:100%; 
+	height:1200px; 
+	background:url(../images/number/bg3.jpg) repeat;
+	background-attachment:fixed;
+}
+.main_top{
+	font-family:"微软雅黑";
+	display:inline-block;
+	margin:28px 0 0 0;
+	width:100%;
+	height:auto;
+}
+/*.top_select{
+	width:100px;
+	height:28px;
+}
+.top_text{
+	width:150px;
+	height:28px;
+}*/
+#num_select{
+	position:absolute;
+	top:70px;
+	left:50px;
+}
+#num_text,#num_type,#num_classified,#num_status,#custom_service{
+	position:absolute;
+	top:70px;
+	left:180px;
+}
+#u2{
+	position:absolute;
+	margin-right:5px;
+	top:70px;
+	left:350px;
+}
+#u3{
+	position:absolute;
+	top:70px;
+	left:595px;
+}
+#u2,#u3,#u4{
+	display:inline;
+	height:auto;
+}
+/*#u2_text,#u3_text{
+	line-height:28px;
+	height:28px; 
+}*/
+#release{
+	display:inline;
+	margin-right:10px;
+}
+#to{
+	display:inline;
+	margin-right:10px;
+}
+#query_btn{
+	position:absolute;
+	width:60px;
+	height:32px;
+	top:70px;
+	left:820px;
+	background-color:#cec4ba;
+	color:#000;
+	font-family:"微软雅黑";
+	font-weight:bold;
+}
+#custom{
+	display:inline;
+}
+.panel_bg{
+	width:100%;
+	height:1000px;
+	margin-left:10px;
+	padding-top:50px;
+	position:relative;
+}
+#fNumber{
+	width:100px;
+	height:35px;
+	float:left;
+	text-align:center;
+	margin-right:5px;
+/*	-moz-border-top-left-radius:8px;
+	-moz-border-top-right-radius:8px;
+    -webkit-border-top-left-radius:8px;
+	-webkit-border-top-right-radius:8px;
+	border-top-left-radius:4px;
+	border-top-right-radius:4px;*/
+}
+#tabs{
+	height:35px;
+	width:auto;
+	position:absolute;
+	z-index:100;
+	top:40px;
+	left:20px;
+}
+#sNumber{
+	width:100px;
+	height:35px;
+	font-family:"微软雅黑";
+	font-size:16px;
+	float:left;
+	text-align:center;
+/*	-moz-border-top-left-radius:8px;
+	-moz-border-top-right-radius:8px;
+    -webkit-border-top-left-radius:8px;
+	-webkit-border-top-right-radius:8px;
+	border-top-left-radius:4px;
+	border-top-right-radius:4px;*/
+}
+.tab{
+	text-decoration:none;
+	width:100px;
+	height:20px;
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#333;
+	line-height:20px;
+}
+#f_text,#s_text{
+	width:1250px;
+	height:auto;
+	background:#E6F2FF;
+	position:absolute;
+	top:67px;
+	left:0px;
+	-moz-border-radius:8px;
+	-moz-border-radius:8px;
+    -webkit-border-radius:8px;
+	-webkit-border-radius:8px;
+	borderradius:8px;
+	borderradius:8px;
+}
+#f_list,#s_list{
+	clear:both;
+	margin-bottom:30px;
+}
+#f_op{
+	width:100%;
+	height:30px;
+	margin:90px 70px 0 ;
+}
+#f_op img{
+	width:110px;
+	height:30px;
+	background-repeat:no-repeat;
+}
+#f_op a{
+	margin-right:30px;
+}
+#f_table{
+	margin:50px 50px 0;
+}
+#f_table td{
+	text-align:center;
+	padding:5px 5px;
+}
+.f_delt,.f_check{ margin:0 10px;}	
+#s_query{
+	width:auto;
+	height:42px;
+	font-family:"微软雅黑";
+	font-weight:bold;
+	margin:70px 50px 30px;
+	line-height:42px;
+}
+#s_query_text{
+	display:inline-block;
+}
+#s_query_txt{
+	display:inline;
+	margin-right:10px;
+}
+#squery_btn{
+	position:absolute;
+	top:74px;
+	left:324px;
+	width:60px;
+	height:32px;
+	background-color:#cec4ba;
+	color:#000;
+	font-family:"微软雅黑";
+	font-weight:bold;
+}
+#s_op{
+	width:100%;
+	height:30px;
+	margin:50px 50px 0;
+}
+#s_op a{ margin-right:20px;}
+#s_table{
+	margin:50px 50px 0 50px;
+}
+#s_table td{
+	padding:5px 5px;
+	text-align:center;
+}
+.pages{
+	margin:20px 0;
+	text-indent:300px;
+	height:auto;
+}
+.pages span{
+	margin:10px;
+	color:#C4A38E;
+	font-family:"黑体";
+	font-size:14px;
+	font-weight:bold;
+	cursor:pointer;
+}
+.page_select{
+	text-decoration:underline;
+}
+.pages .page_skip{
+	width:20px;
+}
+.btn_skip{
+	width:20px;
+	height:20px;
+	fon
+}
+/*添加界面*/
+#divAdd{width:500px; height:400px; border:1px solid #CCC; position:relative;}
+.title{width:500; height:30px; line-height:30px; border-bottom:#CCC 1px solid; cursor:move; font-size:18px; font-weight:bold}
+.radios{width:auto; height:58px}
+.radios div{font-size:9px; float:left; margin:20px 20px}
+#single_box,#batch_box{font-size:14px; width:100%; height:200px}
+.item{margin:15px}
+#number_type{font-size:9px;margin:15px}
+.required{color:red; font-size:14px}
+.label{margin-left:18px; display:inline-block; width:80px}
+#fnumber div{margin-left:10px}
+#add_release_time div{margin-left:10px;}
+select{width:80px;}
+#batch_box{
+	position:absolute;
+	top:88px;
+}
