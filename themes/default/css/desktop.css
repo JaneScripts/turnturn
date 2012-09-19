@@ -189,7 +189,7 @@ a:active {
 	background:url(../images/show-desktop.png) no-repeat center center
 
 }
-#them_btn{
+#theme_btn{
 	background:url(../images/skin.png) no-repeat center center
 
 	}
@@ -508,3 +508,177 @@ line-height:48px;
 cursor:pointer;
 text-align:center;
 }
+/*时钟&天气*/
+#clockPanel{
+	width:150px;
+	height:170px;
+	position:absolute;
+}
+#clockNav{
+	width:150px;
+	height:20px;
+	margin-left:120px;
+	text-align:right;
+	cursor:pointer;
+	position:absolute;
+	top:0;
+	background: url(../images/close.png) no-repeat 0 bottom;
+}
+#clockHolder{
+    width:150px;
+    margin:0px auto 0px auto;
+    position:relative;
+    top:25px;
+}
+#sec{
+    display:block;
+    position:absolute;
+}
+#min{
+    display:block;
+    position:absolute;
+}
+#hour{
+    display:block;
+    position:absolute;
+}
+.rotatingWrapper{
+    position:absolute;
+    width:150px;
+    height:150px;
+    top:0px;
+    left:0px;
+}
+#weatherNav{
+	width:250px;
+	height:20px;
+	margin-left:230px;
+	text-align:right;
+	cursor:pointer;
+	position:absolute;
+	top:0;
+	background: url(../images/close.png) no-repeat 0 bottom;
+}
+#weatherPanel{
+	width:250px;
+	height:122px;
+	position:absolute;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+}
+#weatherHolder{
+	width:250px;
+	height:122px;
+}
+#weatherFrame{
+	background:url(../images/weatherback.png);
+}
+/*密码修改*/
+#psdPanel{
+	width:400px;
+	height:200px;
+	padding-top:20px;
+	border:1px solid #F5FAFE;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	position:absolute;
+	top:170px;
+	left:450px;
+	z-index:10000;
+	background:#F5FAFE
+}
+/* 出错样式 */
+input.error, textarea.error{
+    border: solid 1px #CD0A0A;
+}
+label.error{
+    color:#CD0A0A;
+	font-size:12px;
+}
+        /* 深红色文字 */
+.textred{
+   color:#CD0A0A;
+}
+/*主题更换*/
+#themePanel{
+	width:520px;
+	height:340px;
+	padding:20px 0;
+	border:1px solid #F5FAFE;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	position:absolute;
+	top:170px;
+	left:450px;
+	z-index:10000;
+	background:#F5FAFE;
+	overflow:hidden;
+}
+#themePanel li{
+	width:220px;
+	height:150px;
+	display:inline-block;
+	margin:0 20px;
+	zoom:1; 
+	*display:inline;
+}
+#themePanel li a{
+	width:220px;
+	height:123px;	
+}
+#themePanel img{
+	width:220px;
+	height:123px;
+	border:3px solid #a5c9f6;
+}
+#themePanel li .imgHover{
+	border:solid 3px #000;
+}
+#themePanel p{
+	width:220px;
+	height:20px;
+	font-size:12px;
+	text-align:center;
+	margin-top:5px;
+}
+#themeInnerPanel{
+	width:2180px;
+	position:absolute;
+	top:20px;
+	left:0;
+}
+#themeInnerPanel .themeDiv{
+	width:520px;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+}
+/*主题面板导航按钮*/
+#navBar{
+	width:140px;
+	height:32px;
+	line-height:32px;
+	background:url(../images/navBg0.png) no-repeat center center;
+	text-align:center;
+	position:absolute;
+	left:190px;
+	top:330px;
+	}
+#navBar a{
+	display:inline-block;
+	width:24px;
+	height:24px;
+	background:url(../images/navbg.png) no-repeat left top;
+	margin:4px 3px 0 0;
+	outline:none
+	}
+ 
+#navBar a:hover{
+	background-position: -48px top;
+	}
+#navBar a.currTab{
+	background-position:-24px top;
+	}

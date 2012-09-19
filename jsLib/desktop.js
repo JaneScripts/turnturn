@@ -516,11 +516,44 @@ myLib.desktop.lrBar={
 			,desktopWidth=$deskIcon.width()
 			,lBarWidth=myData.panel.lrBar["_this"].outerWidth()
 			,wh=myData.winWh
+			,$clockPanel = $('#clockPanel')
+			,$clockNav = $('#clockNav')
+			,$weatherPanel = $('#weatherPanel')
+			,$weatherNav = $('#weatherNav')
+			,ie9 = false
 			,_this=this;
   	
 		//初始化侧栏位置
 		_this.upLrBar();
 		
+		if($.browser.msie){
+			if($.browser.version>8){
+				ie9 = true;
+			}
+		}
+		if (!ie9){
+			$clockPanel.css('left', wh.w - 320);
+			$clockPanel.css('top', 180);
+			$clockPanel.show();
+			$("#sec").rotate(0);
+			$("#min").rotate(0);
+			$("#hour").rotate(0);
+			setTimeout(function() {
+				setInterval(function() {
+					var d = new Date;
+					var angleSec = (d.getSeconds() * 6);
+					var angleMin = (d.getMinutes() * 6);
+					var angleHour = ((d.getHours() * 5 + d.getMinutes() / 12) * 6);
+					$("#sec").rotate(angleSec);
+					$("#min").rotate(angleMin);
+					$("#hour").rotate(angleHour);
+
+				}, 1000);
+			}, 100)
+		}		
+		
+		$weatherPanel.css('left',wh.w-355);
+		$weatherPanel.css('top',30);
 		//附加data数据
 		//myLib.desktop.iconDataInit(iconData);
 		
@@ -614,11 +647,76 @@ myLib.desktop.lrBar={
 		 .toggle(function(){
 							myLib.fullscreenIE();	
 							myLib.fullscreen();
-						},
-				function(){
-							myLib.fullscreenIE();
-							myLib.exitFullscreen();
-					});
+							},
+					function(){
+								myLib.fullscreenIE();
+								myLib.exitFullscreen();
+						});
+			$('#shizhong_btn').click(function() {//时钟按钮
+			if(!ie9){
+				if ($clockPanel.css('display') == 'block') {
+					$clockPanel.hide()
+				} else {
+					$clockPanel.show()
+				}
+			}
+		});
+		$('#weather_btn').click(function() {//天气按钮
+				if ($weatherPanel.css('display') == 'block') {
+					$weatherPanel.hide()
+				} else {
+					$weatherPanel.show()
+				}
+		});
+		$('#theme_btn').click(function(){//主题按钮
+				$('#themePanel').toggle();	
+		})
+		$('#themePanel img').mouseover(function(){//选择主题鼠标悬停样式
+			$(this).addClass('imgHover');
+		}).mouseout(function(){
+			$(this).removeClass('imgHover');
+		}).click(function(){//选择主题
+			var img = $(this).attr('image');
+			myLib.desktop.wallpaper.init("themes/default/images/"+img+".jpg");
+			$('#themePanel').hide();
+		})
+		
+		$('#navBar a').live('click',function(){//主题翻页
+			var $this = $(this);
+			var x = $this.attr('x')*1;
+			var t = $this.parents('#themePanel').find('.currTheme').attr('t')*1;
+			var left = -(x)*524;
+			$('#themeInnerPanel').animate({
+				left : left
+			},500,function(){
+				$this.addClass('currTab');
+				$this.siblings().removeClass('currTab');
+				var $div = $this.parents('#themePanel').find('.themeDiv[t='+x+']');
+				$('.currTheme').removeClass('currTheme')
+				$div.addClass('currTheme');
+			})
+		})
+		$clockPanel.mouseover(function() {//时钟显示隐藏
+			$clockNav.show();
+		}).mouseout(function() {
+			$clockNav.hide();
+		}).draggable();
+		$clockNav.mouseover(function() {
+			$(this).css('background-position', '0 0')
+		}).click(function() {
+			$clockPanel.hide();
+		});
+		
+		$weatherPanel.mouseover(function() {//天气显示隐藏
+			$weatherNav.show();
+		}).mouseout(function() {
+			$weatherNav.hide();
+		}).draggable();
+		$weatherNav.mouseover(function() {
+			$(this).css('background-position', '0 0')
+		}).click(function() {
+			$weatherPanel.hide();
+		});
 		}
  	}
 /*----------------------------------------------------------------------------------	
@@ -981,6 +1079,7 @@ myLib.desktop.deskIcon={
 								 });
 		},
 	desktopMove:function($innerPanel,$deskIcon,$def_tab,dates,moveDx,nextIndex){
+		var myData = myLib.desktop.getMydata(), winWh = myData.winWh, wClock = winWh.w - 320,wWeather = winWh.w-355;
 		 $innerPanel
 		 .stop()
 		 .animate({
@@ -996,6 +1095,14 @@ myLib.desktop.deskIcon={
 							.eq(nextIndex)
 							.addClass("currDesk");
  							});
+		$('#clockPanel').animate( {
+			left : (nextIndex) * moveDx + wClock,
+			top : 180
+		}, dates);
+		$('#weatherPanel').animate( {
+			left : (nextIndex) * moveDx + wWeather,
+			top : 30
+		}, dates);
 		},	
 	init:function(iconData){
  		 
