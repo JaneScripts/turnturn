@@ -112,8 +112,14 @@ var myLib={
 	//IE全屏
 	fullscreenIE:function(){
 		if($.browser.msie){
+						alert("IE浏览器不支持全屏");
+						/*try{
 						var  wsh =  new  ActiveXObject("WScript.Shell");  
-						wsh.sendKeys("{F11}");
+						wsh.sendKeys("{F11}");}
+						catch(e){
+							alert(e.message);
+						}*/
+						
 					}
 		}
 	}
